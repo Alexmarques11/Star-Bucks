@@ -1,0 +1,183 @@
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: bold;
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  color: white !important;
+  font-family: arial;
+  margin: 0;
+}
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundimg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 33.33%;
+}
+
+#backgroundShop {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-size: 250px 250px;
+  background-repeat: repeat;
+  color: white !important;
+  font-family: arial;
+}
+
+div .backgroundimg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.buttonCookie {
+  transition: transform 0.07s;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: url("https://i0.wp.com/freepngimages.com/wp-content/uploads/2016/11/super-moon.png?fit=800%2C800");
+  border: 0px;
+  background-size: 191px 191px;
+  font-family: georgia;
+  animation: rotation 20s infinite linear;
+  width: 190px;
+  height: 190px;
+  display: block !important;
+  text-align: center !important;
+  box-shadow: 0px 0px 45px #fff;
+  border-radius: 9999px;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes breath {
+  0% {
+    background-size: 100% auto;
+  }
+
+  50% {
+    background-size: 140% auto;
+  }
+
+  100% {
+    background-size: 100% auto;
+  }
+}
+
+@keyframes zoominoutsinglefeatured {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.01, 1.01);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+div:focus {
+  outline: 0;
+}
+
+.buttonCookie:active {
+  width: 197px;
+  height: 197px;
+  background-size: 197px 197px;
+}
+
+.buttons {
+  width: 145px;
+  height: 50px;
+  font-family: arial;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  text-align: center;
+  border-radius: 0px;
+  color: black;
+  padding-top: 15px;
+  background-color: #c9c9c9;
+  -moz-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.buttons:hover,
+.buttonCookie:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.buttons:focus {
+  outline: 0px;
+}
+
+.header {
+  font-size: 20px;
+  font-style: bold;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  font-family: arial;
+  color: white;
+  background: none !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 150px;
+  height: 20px;
+}
+
+.mCash {
+  font-size: 55px;
+}
+
+#centered {
+  margin: 10px 0 80px 80px;
+}
+
+#shop {
+  padding-bottom: 32px;
+}
+
+#alerts {
+  font-size: 12px;
+}
+
+.shopText {
+  opacity: 0;
+  z-index: -100;
+}
