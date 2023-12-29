@@ -11,6 +11,17 @@ h2{
   color: white;
 }
 
+p{
+  color: white;
+}
+
+.Money{
+  color: white;
+  font-size: 30px;
+  margin-left: 200px;
+  margin-top: -40px;
+}
+
 button {
   width: 200px;
   height: 50px;
@@ -69,12 +80,12 @@ button {
   justify-content: flex-start;
   position: absolute;
   bottom: 5px;
-  left: 90px;
+  left: 70px;
   margin: 15px;
 }
 
 .AttackButtons button {
-  width: 95px;
+  width: 110px;
   height: 50px;
   padding: 10px;
   font-size: 14px;
@@ -115,6 +126,32 @@ button {
   top: 120px
 }
 
+.MonsterWeakness{
+  border: 1px solid #ffffff;
+  width: 70px;
+  height: 60px;
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+  right: 0px;
+  top: 0px
+}
+
+.MonsterWeaknessHeader {
+  padding-right: 30px;  
+  margin-left: 3px;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+#AimWeakness {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 25px;
+  top: 32px;
+}
+
 #greenMonster {
   width: 480px;
   height: 350px;
@@ -124,11 +161,11 @@ button {
 }
 
 #orangeMonster {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 15px;
+  top: 20px;
 }
 
 /*NextEnemies*/	
@@ -151,7 +188,7 @@ button {
 
 #NextEnemies{
   margin-left: 485px;
-  margin-top: 52px;
+  margin-top: 0px;
 }
 
 #EnemiesContainer1{
