@@ -1,5 +1,7 @@
 h1 {
-  padding: 0px 0px 600px 25px;
+  left: 0;
+  top: 0;
+  margin-top: 20px;
   font-size: 40px;
   font-style: bold;
   color: white;
@@ -23,14 +25,51 @@ button {
   border-radius: 10px;
 }
 
+#SaveButton {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  font-size: 14px;
+  color: #fffcfc;
+  background-color: #000000;
+  box-shadow: 0 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  right: 170px; 
+  top: 10px; 
+  border-radius: 10px;
+}
+
+#LoadButton {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  font-size: 14px;
+  color: #fffcfc;
+  background-color: #000000;
+  box-shadow: 0 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  right: 60px; 
+  top: 10px; 
+  border-radius: 10px;
+}
+
+#SaveButton:hover, #LoadButton:hover {
+  border: 2px solid #ffffff;
+}
+
+/*AttackButtons*/
 
 .AttackButtons {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  bottom: 30px;
-  left: 45px;
+  bottom: 5px;
+  left: 90px;
   margin: 15px;
 }
 
@@ -48,25 +87,27 @@ button {
   border-radius: 10px;
 }
 
-
 .AttackButtons button:last-child {
   margin-right: 0;
 }
 
 .AttackButtons button:hover {
-  background-color: none; 
+  border: 2px solid #ffffff;; 
 }
+
+/*Monster*/
   
 .MonsterHeader { 
   padding-right: 30px;  
-  margin-left: 100px;
+  margin-left: 175px;
+  font-size: 15px;
   margin-top: 0px;
 }
 
 .MonsterContainer{
   border: 1px solid #ffffff;
-  width: 300px;
-  height: 325px;
+  width: 400px;
+  height: 355px;
   position: absolute;
   padding: 10px;
   border-radius: 10px;
@@ -74,6 +115,61 @@ button {
   top: 120px
 }
 
+#greenMonster {
+  width: 480px;
+  height: 350px;
+  position: absolute;
+  left: -40px;
+  top: 20px;
+}
+
+#orangeMonster {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/*NextEnemies*/	
+
+.NextEnemiesContainer{
+  border: 1px solid #ffffff;
+  width: 90px;
+  height: 80px;
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.NextEnemiesHeader {
+  padding-right: 30px;  
+  margin-left: 10px;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+#NextEnemies{
+  margin-left: 485px;
+  margin-top: 52px;
+}
+
+#EnemiesContainer1{
+  left: 480px;
+  top: 135px;
+}
+
+#EnemiesContainer2{
+  left: 480px;
+  top: 240px;
+}
+
+#EnemiesContainer3{
+  left: 480px;
+  top: 345px;
+}
+
+/*Missions*/
 
 .MissionsContainer{
   border: 1px solid #ffffff;
@@ -86,13 +182,34 @@ button {
   top: 120px;
 }
 
-
 .MissionsHeader {
   padding-right: 30px;  
+  margin-left: 115px;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+/*CharacterStats*/
+
+.CharacterStatsContainer{
+  border: 1px solid #ffffff;
+  width: 300px;
+  height: 140px;
+  position: absolute;
+  padding: 10px;
+  border-radius: 10px;
+  right: 300px;
+  top: 405px;
+}
+
+.CharacterStatsHeader {
+  padding-right: 30px;  
+  font-size: 15px;
   margin-left: 90px;
   margin-top: 0px;
 }
 
+/*Store*/
 
 .ButtonsStore {
   display: flex;
@@ -103,6 +220,26 @@ button {
   top: 100px;
   right: 50px;
   margin: 15px;
+}
+
+.ButtonsStore button {
+  padding: 10px;
+  font-size: 14px;
+  color: #fffcfc;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px; 
+  border-radius: 10px;
+}
+
+.ButtonsStore button:last-child {
+  margin-bottom: 0; 
+}
+
+.ButtonsStore button:hover {
+  border: 2px solid #ffffff;
 }
 
 .StoreHeader {

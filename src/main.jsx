@@ -8,7 +8,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Starfield
         starCount={1000}
         starColor={[255, 255, 255]}
-        speedFactor={0.25}
+        speedFactor={0.4}
         backgroundColor="black"
       />
     <App />
