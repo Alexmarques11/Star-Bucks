@@ -80,12 +80,12 @@ button {
   justify-content: flex-start;
   position: absolute;
   bottom: 5px;
-  left: 70px;
+  left: 55px;
   margin: 15px;
 }
 
 .AttackButtons button {
-  width: 110px;
+  width: 120px;
   height: 50px;
   padding: 10px;
   font-size: 14px;

@@ -1,4 +1,5 @@
 import './App.css';
+import PreLoader from './components/PreLoader.jsx';
 
 const App = () => {
   const playBuySound = () => {
@@ -32,6 +33,8 @@ const App = () => {
   };
 
   return (
+    <>  
+    <PreLoader />
     <div className='App'>
       <header>
         <div className="Navbar">
@@ -105,6 +108,7 @@ const App = () => {
       </div>
       </div>
     </div>
+    </>
   );
 };
 
