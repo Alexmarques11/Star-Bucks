@@ -1,3 +1,7 @@
+body {
+  font-family: 'Space Mono';
+}
+
 h1 {
   left: 0;
   top: 0;
@@ -15,11 +19,11 @@ p{
   color: white;
 }
 
-.Money{
+#game-title {
+  font-size: 40px;
+  font-style: bold;
   color: white;
-  font-size: 30px;
-  margin-left: 200px;
-  margin-top: -40px;
+  margin: 3%;
 }
 
 button {
@@ -28,6 +32,7 @@ button {
   padding: 10px;
   font-size: 14px;
   color: #fffcfc;
+  font-family: 'Space Mono';
   background-color: #000000;
   box-shadow: 0 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
   border: none;
@@ -36,49 +41,12 @@ button {
   border-radius: 10px;
 }
 
-#SaveButton {
-  width: 100px;
-  height: 50px;
-  padding: 10px;
-  position: absolute;
-  font-size: 14px;
-  color: #fffcfc;
-  background-color: #000000;
-  box-shadow: 0 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
-  border: none;
-  cursor: pointer;
-  right: 170px; 
-  top: 10px; 
-  border-radius: 10px;
-}
-
-#LoadButton {
-  width: 100px;
-  height: 50px;
-  padding: 10px;
-  position: absolute;
-  font-size: 14px;
-  color: #fffcfc;
-  background-color: #000000;
-  box-shadow: 0 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
-  border: none;
-  cursor: pointer;
-  right: 60px; 
-  top: 10px; 
-  border-radius: 10px;
-}
-
-#SaveButton:hover, #LoadButton:hover {
-  border: 2px solid #ffffff;
-}
-
 /*AttackButtons*/
 
 .AttackButtons {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  position: absolute;
   bottom: 5px;
   left: 55px;
   margin: 15px;
@@ -110,31 +78,29 @@ button {
   
 .MonsterHeader { 
   padding-right: 30px;  
-  margin-left: 175px;
   font-size: 15px;
   margin-top: 0px;
 }
 
-.MonsterContainer{
+.MonsterContainer {
+  position: relative; /* Use relative positioning for the container */
   border: 1px solid #ffffff;
   width: 400px;
   height: 355px;
-  position: absolute;
   padding: 10px;
   border-radius: 10px;
-  left: 50px;
-  top: 120px
 }
 
 .MonsterWeakness{
   border: 1px solid #ffffff;
   width: 70px;
   height: 60px;
-  position: absolute;
   padding: 10px;
   border-radius: 10px;
-  right: 0px;
-  top: 0px
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
 }
 
 .MonsterWeaknessHeader {
@@ -144,50 +110,56 @@ button {
   margin-top: 0px;
 }
 
-#AimWeakness {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: 25px;
-  top: 32px;
+.QuestRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
 }
 
-#greenMonster {
-  width: 480px;
-  height: 350px;
-  position: absolute;
-  left: -40px;
-  top: 20px;
+.QuestDescription {
+  margin-left: 10px;
+  flex-grow: 1; 
+  color: #e0e0e0; 
+  font-size: 16px; 
+  text-align: left; 
 }
 
-#orangeMonster {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  left: 15px;
-  top: 20px;
+.QuestMonsterImage {
+  width: 20%; 
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  margin-top: 15px;
+}
+
+#Weakness {
+  width: 35px;
+  height: 35px;
 }
 
 /*NextEnemies*/	
+.NextEnemies {
+  margin-left: 20px; /* Optional: Add some space between the containers */
+}
 
-.NextEnemiesContainer{
+.MonsterAndEnemies {
+  display: flex;
+  justify-content: left;
+  align-items: start;
+}
+
+.NextEnemiesContainer {
   border: 1px solid #ffffff;
   width: 90px;
   height: 80px;
-  position: absolute;
   padding: 10px;
   border-radius: 10px;
+  margin-top: 10%;
 }
 
 .NextEnemiesHeader {
-  padding-right: 30px;  
-  margin-left: 10px;
   font-size: 15px;
-  margin-top: 0px;
-}
-
-#NextEnemies{
-  margin-left: 485px;
   margin-top: 0px;
 }
 
@@ -207,78 +179,79 @@ button {
 }
 
 /*Missions*/
+.MonsterMissionsContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: start; 
+  gap: 120px; 
+}
 
-.MissionsContainer{
+.MissionsContainer {
   border: 1px solid #ffffff;
   width: 300px;
-  height: 255px;
-  position: absolute;
   padding: 10px;
   border-radius: 10px;
-  right: 300px;
-  top: 120px;
 }
 
 .MissionsHeader {
-  padding-right: 30px;  
-  margin-left: 115px;
+  text-align: center; 
   font-size: 15px;
   margin-top: 0px;
 }
 
 /*CharacterStats*/
 
-.CharacterStatsContainer{
+.CharacterStats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.CharacterStatsContainer {
   border: 1px solid #ffffff;
   width: 300px;
-  height: 140px;
-  position: absolute;
   padding: 10px;
   border-radius: 10px;
-  right: 300px;
-  top: 405px;
+  margin-bottom: 20px; /* Add some space between stats and buttons */
 }
 
 .CharacterStatsHeader {
-  padding-right: 30px;  
   font-size: 15px;
-  margin-left: 90px;
-  margin-top: 0px;
+  margin-bottom: 10px; /* Add some space below the header */
 }
 
-/*Store*/
-
-.ButtonsStore {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  position: absolute;
-  top: 100px;
-  right: 50px;
-  margin: 15px;
-}
-
-.ButtonsStore button {
+/* Style for the Save and Load buttons */
+#SaveButton, #LoadButton {
+  width: 100px;
+  height: 50px;
   padding: 10px;
   font-size: 14px;
   color: #fffcfc;
-  background-color: rgb(0, 0, 0);
+  background-color: #000000;
   box-shadow: 0 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(255, 255, 255);
   border: none;
   cursor: pointer;
-  margin-bottom: 10px; 
   border-radius: 10px;
+  margin: 25px; /* Add margin for spacing */
 }
 
-.ButtonsStore button:last-child {
-  margin-bottom: 0; 
-}
-
-.ButtonsStore button:hover {
+#SaveButton:hover, #LoadButton:hover {
   border: 2px solid #ffffff;
 }
 
-.StoreHeader {
-  padding-right: 45px; 
+/* Style for the monster image to fit in area */
+.MonsterImage {
+  width: 60%; /* ou qualquer tamanho que você deseja */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  margin-top: -15px;
+}
+
+.teste {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
