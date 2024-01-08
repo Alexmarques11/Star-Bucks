@@ -1,23 +1,13 @@
 import './App.css';
 import PreLoader from './components/PreLoader.jsx';
+import { killMonster } from './js/game.js';
 import { playSound } from './js/soundEffects';
 
 const App = () => {
 
-  const playBuySound = () => playSound('buy');
   const playBlasterSound = () => playSound('blaster');
   const playSaberSound = () => playSound('Saber');
   const playAwwSound = () => playSound('charm');
-
-  const handleSave = () => {
-    
-    console.log('Saving...');
-  };
-
-  const handleLoad = () => {
-    
-    console.log('Loading...');
-  };
 
   return (
     <>  
@@ -47,11 +37,10 @@ const App = () => {
 
             <div className="teste">
               
-              <div className='MonsterWeakness'>
+              <div id="MonsterWeaknessContainer" className='MonsterWeakness'>
                 <h2 id='MonsterWeaknessHeader' className='MonsterWeaknessHeader'>
                   &#160;&#160;&#160;Weakness
                 </h2>
-                <img id='Weakness' src='./src/symbols/aim.png' alt='Aim Weakness' />
               </div>
 
             </div>
@@ -75,9 +64,18 @@ const App = () => {
 
           <div className="Attacks">
             <div className='AttackButtons'>
-              <button id='Attack1' className='upgrade1' onClick={playBlasterSound}>Blaster 🔫</button>
-              <button id='Attack2' className='upgrade2' onClick={playSaberSound}>Saber 🔦</button>
-              <button id='Attack3' className='upgrade3' onClick={playAwwSound}>So Cute 🐶</button>
+              <button id='Attack1' className='upgrade1' onClick={() => {
+                playBlasterSound();
+                killMonster('blaster');
+              }}>Blaster 🔫</button>
+              <button id='Attack2' className='upgrade2' onClick={() => {
+                playSaberSound();
+                killMonster('saber');
+              }}>Saber 🔦</button>
+              <button id='Attack3' className='upgrade3' onClick={() => {
+                playAwwSound();
+                killMonster('cuteness');
+              }}>So Cute 🐶</button>
             </div>
           </div>
           
@@ -87,28 +85,16 @@ const App = () => {
             <div className="Missions">
               <div className="MissionsContainer">
                 <h2 id="Missions" className="MissionsHeader">Quests 🕮</h2>
-                <div className="QuestRow">
-                  <img src="./src/monsters/space-monsters-purple.png" class="QuestMonsterImage"></img>
-                  <span className="QuestDescription">🗡️ 0/2 &#160; (5 💰)</span> 
-                </div>
-                <div className="QuestRow">
-                  <img src="./src/monsters/space-monsters-orange.png" class="QuestMonsterImage"></img>
-                  <span className="QuestDescription">🛡️ 0/3 &#160; (10 💰)</span>
-                </div>
               </div>
             </div>
 
             <div className="CharacterStats">
               <div className="CharacterStatsContainer">
                 <h2 id="CharacterStats" className="CharacterStatsHeader" align="center">Character Stats</h2>
-                <p id="CharacterStats1" className="CharacterStatsParagraph"align="center">💰 Money: 0</p>
+                <p id="money" className="CharacterStatsParagraph"align="center">💰 Money: 0</p>
                 <p id="CharacterStats1" className="CharacterStatsParagraph"align="center">🔫 Blaster: 0</p>
                 <p id="CharacterStats2" className="CharacterStatsParagraph"align="center">🔦 Saber: 0</p>
                 <p id="CharacterStats3" className="CharacterStatsParagraph"align="center">🐶 Charm: 0</p>
-
-                <button id="SaveButton" onClick={handleSave}>Save</button>
-                <button id="LoadButton" onClick={handleLoad}>Load</button>
-
               </div>
               
             </div>
