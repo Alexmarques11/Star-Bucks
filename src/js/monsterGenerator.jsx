@@ -1,4 +1,4 @@
-import { Monster } from './monster.js';
+import { Monster } from './monster.jsx';
 
 export const getGreenMonster = () => {
     return new Monster(1, './src/monsters/space-monsters-purple.png', 'blaster');

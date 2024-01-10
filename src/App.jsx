@@ -1,7 +1,9 @@
 import './App.css';
 import PreLoader from './components/PreLoader.jsx';
-import { killMonster } from './js/game.js';
-import { playSound } from './js/soundEffects';
+import { killMonster, passMonster } from './js/game.jsx';
+import { playSound } from './js/soundEffects.jsx';
+import QuestComponent from './components/QuestComponent.jsx';
+import CharacterStats from './components/CharacterStats.jsx';
 
 const App = () => {
 
@@ -22,7 +24,7 @@ const App = () => {
         <audio id='buy' src='http://orteil.dashnet.org/cookieclicker/snd/clickb1.mp3'></audio>
         <h1 id="game-title" align="center">Star-Bucks</h1>
       </header>
-
+      
       <div className='MainScreen'>
 
         <div className="Monster">
@@ -76,6 +78,9 @@ const App = () => {
                 playAwwSound();
                 killMonster('cuteness');
               }}>So Cute 🐶</button>
+              <button id='Attack4' className='upgrade4' onClick={() => {
+                passMonster();
+              }}>Pass 😴</button>
             </div>
           </div>
           
@@ -83,21 +88,11 @@ const App = () => {
         
           <div className="MissionsAndStats">
             <div className="Missions">
-              <div className="MissionsContainer">
-                <h2 id="Missions" className="MissionsHeader">Quests 🕮</h2>
-              </div>
+              <QuestComponent />
             </div>
 
-            <div className="CharacterStats">
-              <div className="CharacterStatsContainer">
-                <h2 id="CharacterStats" className="CharacterStatsHeader" align="center">Character Stats</h2>
-                <p id="money" className="CharacterStatsParagraph"align="center">💰 Money: 0</p>
-                <p id="CharacterStats1" className="CharacterStatsParagraph"align="center">🔫 Blaster: 0</p>
-                <p id="CharacterStats2" className="CharacterStatsParagraph"align="center">🔦 Saber: 0</p>
-                <p id="CharacterStats3" className="CharacterStatsParagraph"align="center">🐶 Charm: 0</p>
-              </div>
-              
-            </div>
+            <CharacterStats />
+            
           </div>
 
           </div>

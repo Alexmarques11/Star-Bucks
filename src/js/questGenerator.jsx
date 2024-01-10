@@ -1,6 +1,5 @@
-import { Monster } from './monster.js';
-import { Quest } from './quest.js';
-import * as monsterGenerator from './monsterGenerator.js';
+import { Quest } from './quest.jsx';
+import * as monsterGenerator from './monsterGenerator.jsx';
 
 let activeQuests = [];
 let hasStarted = false;
@@ -24,7 +23,8 @@ export const generateQuest = () => {
 
     const questDescription = document.createElement('span');
     questDescription.classList.add('QuestDescription');
-    questDescription.innerText = quest.progress +'/' + quest.quantity + ' (' + quest.reward + ' 💰)';
+    let icon = quest.isToKill ? '🗡️' : '🛡️';
+    questDescription.innerText = icon + ' ' + quest.progress +'/' + quest.quantity + ' (' + quest.reward + ' 💰)';
     questRow.appendChild(questDescription);
 
     return quest;
@@ -48,7 +48,7 @@ export const addActiveQuest = (monster) => {
 
 export const getRandomQuest = () => {
     const monster = monsterGenerator.getRandomMonster();
-    const isToKill = Math.random() > 0.5;
+    const isToKill = Math.random() > 0.3;
     const quantity = Math.ceil(Math.random() * 5);
     const reward = quantity * 2;
 
@@ -56,7 +56,8 @@ export const getRandomQuest = () => {
 };
 
 // get a killed monster and update quests
-export const updateQuests = (monster) => {
+
+export const updateQuests = (monster, wasKilled) => {
 
     // log
     console.log('Updating quests... (active quests: ' + activeQuests.length + ')');
@@ -65,8 +66,36 @@ export const updateQuests = (monster) => {
     for (let i = 0; i < activeQuests.length; i++) {
         const quest = activeQuests[i];
 
+        console.log('quest: ' + quest.monster.id + ' - monster: ' + monster.id);
+        console.log('quest.isToKill: ' + quest.isToKill + ' - wasKilled: ' + wasKilled);
+
+        if (quest.monster.id === monster.id && !quest.isToKill && wasKilled) {
+            // Fail the quest, remove it and add a new one, remove coins
+
+            // remove quest
+            activeQuests.splice(i, 1);
+            // remove quest from DOM
+            const questRow = document.getElementsByClassName('QuestRow')[i];
+            questRow.remove();
+            // add new quest
+            const newQuest = generateQuest();
+            addActiveQuest(newQuest);
+
+            // update money
+            let money = sessionStorage.getItem('money');
+            if (money === null || isNaN(parseInt(money))) {
+                money = '0';
+            }
+            money = parseInt(money);
+            money -= parseInt(quest.reward);
+            document.getElementById('money').innerText = '💰 Money: ' + money;
+            sessionStorage.setItem('money', money);
+
+            return;
+        }
+        
         // quest.isToKill && 
-        if (quest.monster.id == monster.id) {
+        else if (quest.monster.id === monster.id && quest.isToKill === wasKilled) {
 
             console.log('progress');
             quest.progress++;
@@ -96,14 +125,11 @@ export const updateQuests = (monster) => {
             console.log('update quest');
                 // update quest
                 const questDescription = document.getElementsByClassName('QuestDescription')[i];
-                questDescription.innerText = quest.progress + '/' + quest.quantity + ' (' + quest.reward + ' 💰)';
+                let icon = quest.isToKill ? '🗡️' : '🛡️';
+                questDescription.innerText = icon + ' ' + quest.progress +'/' + quest.quantity + ' (' + quest.reward + ' 💰)';
             }
         }
 
     }
-
-    // update money
-    // let money = parseInt(document.getElementById('Money').innerText);
-    // money += monster.reward;
-    // document.getElementById('Money').innerText = money;
 };
+

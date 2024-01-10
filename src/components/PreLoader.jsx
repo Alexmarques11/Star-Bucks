@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
 import './preloader.css'
 import { preLoaderAnim } from '../animations/index'
-import { startGameMonsters } from '../js/monsterGenerator';
+import { startGameMonsters } from '../js/monsterGenerator.jsx';
 import { startGameQuests } from '../js/questGenerator';
-import { handleLoad } from '../js/saveLoad';
 
 const PreLoader = () => {
 
     useEffect(() => {
-        handleLoad();
         preLoaderAnim();
         startGameMonsters();
         startGameQuests();

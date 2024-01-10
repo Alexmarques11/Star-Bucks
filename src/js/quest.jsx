@@ -7,3 +7,4 @@ export class Quest {
         this.reward = reward;
     }
 }
+
