@@ -17,7 +17,7 @@ const App = () => {
         <title>Star-Bucks</title>
         <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'></link>
         <audio id='blaster' src='./src/sounds/blaster.mp3'></audio>
-        <audio id='Saber' src='./src/sounds/Saber.mp3'></audio>
+        <audio id='Saber' src='./src/sounds/lightsaber.mp3'></audio>
         <audio id='charm' src='./src/sounds/aww.mp3'></audio>
         <audio id='buy' src='http://orteil.dashnet.org/cookieclicker/snd/clickb1.mp3'></audio>
         <h1 id="game-title" align="center">Star-Bucks</h1>
